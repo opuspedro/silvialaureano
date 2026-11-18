@@ -1,36 +1,33 @@
 :root {
-  /* Tactile paper & linen surfaces */
-  --paper: #FBF8F3;
-  --paper-pure: #FFFDF9;
-  --linen: #F3EDE3;
-  --linen-deep: #ECE3D5;
+  /* Tactile cotton & mineral slate surfaces */
+  --paper: #FAF9F7;
+  --paper-pure: #FFFFFF;
+  --surface-muted: #EEF2F6;
+  --surface-deep: #E4EAF1;
 
-  /* Deep botanical obsidian */
-  --obsidian: #161E19;
-  --obsidian-soft: #1D2721;
-  --obsidian-studio: #0B0908;
+  /* Deep Oxford / Prussian midnight centerpiece */
+  --midnight: #111D2C;
+  --midnight-soft: #18273B;
+  --midnight-studio: #0A0D12;
 
-  /* Editorial inks */
-  --ink-900: #1B221E;
-  --ink-700: #3D443F;
-  --ink-500: #66635C;
-  --ink-400: #878177;
+  /* Editorial slate-navy inks */
+  --ink-900: #121E2D;
+  --ink-700: #384556;
+  --ink-500: #627082;
+  --ink-400: #8896A7;
 
-  /* Clinical sage & antique bronze accents */
-  --sage-900: #1E2C24;
-  --sage-800: #283A30;
-  --sage-700: #354B3F;
-  --sage-600: #4A6355;
-  --sage-100: #E5ECE7;
-
-  --bronze-600: #87683E;
-  --bronze-500: #A28255;
-  --bronze-300: #CCB48E;
+  /* Serious clinical navy & steel-slate accents */
+  --navy-900: #142336;
+  --navy-800: #1B314B;
+  --navy-700: #294667;
+  --navy-600: #3D5D82;
+  --navy-300: #9AB2CB;
+  --navy-100: #DFE7F0;
 
   /* Architectural hairlines */
-  --rule: #E3DACD;
-  --rule-strong: #D0C3B1;
-  --rule-dark: rgba(245, 240, 232, 0.13);
+  --rule: #DCE2EA;
+  --rule-strong: #C4CFDC;
+  --rule-dark: rgba(226, 235, 245, 0.14);
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -90,12 +87,12 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 1.5px solid var(--sage-700);
+  outline: 1.5px solid var(--navy-700);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: var(--sage-100);
+  background: var(--navy-100);
   color: var(--ink-900);
 }
 
@@ -104,7 +101,7 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--linen);
+  background: var(--surface-muted);
 }
 
 ::-webkit-scrollbar-thumb {
