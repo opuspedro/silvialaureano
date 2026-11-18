@@ -1,44 +1,49 @@
 :root {
-  --sage-900: #2D3B32;
-  --sage-800: #3A4D40;
-  --sage-700: #4A5D52;
-  --sage-600: #5A7066;
-  --sage-500: #6B8377;
-  --sage-400: #8DA396;
-  --sage-300: #B0C4B8;
-  --sage-200: #D4E0D9;
-  --sage-100: #E8EFEB;
-  --sage-50: #F2F6F4;
+  /* Tactile paper & linen surfaces */
+  --paper: #FBF8F3;
+  --paper-pure: #FFFDF9;
+  --linen: #F3EDE3;
+  --linen-deep: #ECE3D5;
 
-  --cream-900: #4A4239;
-  --cream-800: #6B5F52;
-  --cream-700: #8C7D6D;
-  --cream-600: #A89885;
-  --cream-500: #C4B5A3;
-  --cream-400: #D6CABB;
-  --cream-300: #E3DAD0;
-  --cream-200: #EDE7DF;
-  --cream-100: #F5F0EB;
-  --cream-50: #FAF8F5;
+  /* Deep botanical obsidian */
+  --obsidian: #161E19;
+  --obsidian-soft: #1D2721;
+  --obsidian-studio: #0B0908;
 
-  --gold-600: #9E7E3A;
-  --gold-500: #B8934A;
-  --gold-400: #C4A265;
-  --gold-300: #D4BA8A;
-  --gold-200: #E4D4B4;
+  /* Editorial inks */
+  --ink-900: #1B221E;
+  --ink-700: #3D443F;
+  --ink-500: #66635C;
+  --ink-400: #878177;
 
-  --charcoal: #2C2C2C;
-  --charcoal-light: #4A4A4A;
-  --charcoal-muted: #6B6B6B;
+  /* Clinical sage & antique bronze accents */
+  --sage-900: #1E2C24;
+  --sage-800: #283A30;
+  --sage-700: #354B3F;
+  --sage-600: #4A6355;
+  --sage-100: #E5ECE7;
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
+  --bronze-600: #87683E;
+  --bronze-500: #A28255;
+  --bronze-300: #CCB48E;
 
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  /* Architectural hairlines */
+  --rule: #E3DACD;
+  --rule-strong: #D0C3B1;
+  --rule-dark: rgba(245, 240, 232, 0.13);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --container-max: 1220px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,15 +53,21 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   font-family: var(--font-body);
-  font-weight: 300;
-  color: var(--charcoal);
-  background-color: var(--cream-50);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--ink-700);
+  background-color: var(--paper);
   line-height: 1.7;
   overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
 }
 
 img {
@@ -74,20 +85,47 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1.5px solid var(--sage-700);
+  outline-offset: 3px;
 }
 
 ::selection {
-  background: var(--sage-200);
-  color: var(--sage-900);
+  background: var(--sage-100);
+  color: var(--ink-900);
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--cream-100);
+  background: var(--linen);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--sage-400);
+  background: var(--rule-strong);
   border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-400);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
