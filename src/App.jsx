@@ -23,16 +23,17 @@ const NAV_LINKS = [
   { href: '#contato', label: 'Contato' },
 ]
 
-function Reveal({ children, delay = 0, className = '' }) {
+function Reveal({ children, delay = 0, className = '', immediate = false }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-48px' })
+  const isInView = useInView(ref, { once: true, margin: '0px 0px -32px 0px' })
+  const shouldShow = immediate || isInView
 
   return (
     <motion.div
       ref={ref}
       className={className}
       initial={{ opacity: 0, y: 18 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      animate={shouldShow ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
@@ -179,26 +180,26 @@ function Hero() {
     <section className="hero">
       <div className="hero-inner">
         <div className="hero-copy">
-          <Reveal delay={0.05}>
+          <Reveal immediate delay={0.05}>
             <div className="eyebrow">
               <span className="eyebrow-rule" aria-hidden="true" />
               <span>Psicologia Clínica &middot; São Paulo</span>
             </div>
           </Reveal>
 
-          <Reveal delay={0.12}>
+          <Reveal immediate delay={0.12}>
             <h1 className="hero-title">
               Silvia <em>Laureano</em>
             </h1>
           </Reveal>
 
-          <Reveal delay={0.2}>
+          <Reveal immediate delay={0.2}>
             <p className="hero-lead">
               Um espaço ético de escuta, presença e elaboração para cada tempo da vida.
             </p>
           </Reveal>
 
-          <Reveal delay={0.28}>
+          <Reveal immediate delay={0.28}>
             <p className="hero-description">
               Com mais de quatro décadas dedicadas à psicologia clínica, ofereço
               acompanhamento individual para adultos, adolescentes e crianças — acolhendo
@@ -207,7 +208,7 @@ function Hero() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.36}>
+          <Reveal immediate delay={0.36}>
             <div className="hero-actions">
               <a
                 href={WHATSAPP_LINK}
@@ -225,7 +226,7 @@ function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.44}>
+          <Reveal immediate delay={0.44}>
             <dl className="hero-ledger">
               <div className="hero-ledger-item">
                 <dd>40+ anos</dd>
@@ -243,7 +244,7 @@ function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.18} className="hero-visual">
+        <Reveal immediate delay={0.18} className="hero-visual">
           <figure className="hero-portrait-mat">
             <div className="hero-portrait-frame">
               <img

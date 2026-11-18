@@ -873,7 +873,7 @@
 
 .studio-portrait-frame img {
   width: 100%;
-  aspect-ratio: 1706 / 2300;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   object-position: center top;
 }
